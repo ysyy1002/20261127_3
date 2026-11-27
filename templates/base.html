@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- 모든 페이지의 공통 틀 (메뉴 + 내용 자리) -->
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>로그인 예제</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">홈</a>
+    {% if user %}
+      <!-- 로그인 했을 때 메뉴 -->
+      <a href="/mypage">마이페이지</a>
+      {% if user.role == "admin" %}<a href="/admin">관리자</a>{% endif %}
+      <a href="/logout">로그아웃</a>
+    {% else %}
+      <!-- 로그인 안 했을 때 메뉴 -->
+      <a href="/login">로그인</a>
+      <a href="/signup">회원가입</a>
+    {% endif %}
+  </nav>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

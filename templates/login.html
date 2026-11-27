@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>로그인</h1>
+
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+
+<!-- input의 name이 서버의 Form() 변수 이름과 같아야 함 -->
+<form action="/login" method="post">
+  <input name="username" placeholder="아이디" required>
+  <input name="password" type="password" placeholder="비밀번호" required>
+  <button>로그인</button>
+</form>
+{% endblock %}

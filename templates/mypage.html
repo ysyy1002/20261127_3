@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>마이페이지</h1>
+
+<p>아이디: {{ user.username }}</p>
+<p>이름: {{ user.name }}</p>
+<p>권한: {{ user.role }}</p>
+{% endblock %}
